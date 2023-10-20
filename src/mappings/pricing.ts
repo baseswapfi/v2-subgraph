@@ -3,11 +3,11 @@ import { Pair, Token, Bundle } from '../types/schema'
 import { BigDecimal, Address, BigInt } from '@graphprotocol/graph-ts/index'
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD, UNTRACKED_PAIRS } from './helpers'
 
-const WETH_ADDRESS = '0x4200000000000000000000000000000000000006'
-const WETH_AXLUSDC_PAIR = '0x9a0b05f3cf748a114a4f8351802b3bffe07100d4'
+const WETH_ADDRESS = '0x5300000000000000000000000000000000000004'
+const WETH_USDC_PAIR = ''
 
 export function getEthPriceInUSD(): BigDecimal {
-  let axlUsdcPair = Pair.load(WETH_AXLUSDC_PAIR) // axlusdc is token1
+  let axlUsdcPair = Pair.load(WETH_USDC_PAIR)
 
   if (axlUsdcPair !== null) {
     return axlUsdcPair.token1Price
@@ -18,21 +18,11 @@ export function getEthPriceInUSD(): BigDecimal {
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  '0x4200000000000000000000000000000000000006', // WETH
-  '0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22', // cbETH
-  '0x78a087d713be963bf307b18f2ff8122ef9a63ae9', // BSWAP
-  '0xd5046b976188eb40f6de40fb527f89c05b323385', // BSX
-  '0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca', // USDbC
-  '0xeb466342c4d449bc9f53a865d5cb90586f405215', // axlUSDC
-  '0x50c5725949a6f0c72e6c4a641f24049a917db0cb', // DAI
-  '0x4a3a6dd60a34bb2aba60d73b4c88315e9ceb6a3d', // MIM
-  '0xb79dd08ea68a908a97220c76d19a6aa9cbde4376', // USD+
-  '0x65a2508c429a6078a7bc2f7df81ab575bd9d9275', // DAI+
-  '0x4788de271f50ea6f5d5d2a5072b8d3c61d650326', // BASIN
-  '0x0a074378461fb7ed3300ea638c6cc38246db4434', // EDE
-  '0xab8a1c03b8e4e1d21c8ddd6edf9e07f26e843492', // OGRE
-  '0x6b4712ae9797c199edd44f897ca09bc57628a1cf', // UNIDX
-  '0x8901cb2e82cc95c01e42206f8d1f417fe53e7af0', // YFX
+  '0x5300000000000000000000000000000000000004', // WETH
+  '0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4', // USDC
+  '0xcA77eB3fEFe3725Dc33bccB54eDEFc3D9f764f97', // DAI
+  '0xf55BEC9cafDbE8730f096Aa55dad6D22d44099Df', // USDT
+  '0x3C1BCa5a656e69edCD0D4E36BEbb3FcDAcA60Cf1' // WBTC
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps

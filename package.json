@@ -1,12 +1,12 @@
 {
-  "name": "baseswap-subgraph",
+  "name": "baseswap-v2-scroll-subgraph",
   "version": "1.0.0",
-  "repository": "https://github.com/harleen-m/baseswap-subgraph",
+  "repository": "https://github.com/baseswapfi/v2-subgraph",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "deploy": "graph deploy --product hosted-service harleen-m/baseswap"
+    "deploy": "graph deploy --product hosted-service baseswapfi/v2-scroll"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.56.0",
