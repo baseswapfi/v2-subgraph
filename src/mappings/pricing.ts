@@ -4,7 +4,7 @@ import { BigDecimal, Address, BigInt } from '@graphprotocol/graph-ts/index'
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD, UNTRACKED_PAIRS } from './helpers'
 
 const WETH_ADDRESS = '0x4200000000000000000000000000000000000006'
-const WETH_USDC_PAIR = '0x50273860341bb80de359cD391BEf9b2EB228753C'
+const WETH_USDC_PAIR = '0x50273860341bb80de359cd391bef9b2eb228753c'
 
 export function getEthPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(WETH_USDC_PAIR) // USDC is token1 on Mode
@@ -25,10 +25,10 @@ let WHITELIST: string[] = [
   '0xE7798f023fC62146e8Aa1b36Da45fb70855a77Ea', // DAI
   '0xf0F161fDA2712DB8b566946122a5af183995e2eD', // USDT
   '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb' // LINK
-]
+].map(t => t.toLowerCase())
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
-let MINIMUM_USD_THRESHOLD_NEW_PAIRS = BigDecimal.fromString('10')
+let MINIMUM_USD_THRESHOLD_NEW_PAIRS = BigDecimal.fromString('0')
 
 // minimum liquidity for price to get tracked
 let MINIMUM_LIQUIDITY_THRESHOLD_ETH = BigDecimal.fromString('0')
