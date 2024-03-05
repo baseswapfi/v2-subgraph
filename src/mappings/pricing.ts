@@ -7,10 +7,10 @@ const WETH_ADDRESS = '0x4200000000000000000000000000000000000006'
 const WETH_USDC_PAIR = '0x50273860341bb80de359cD391BEf9b2EB228753C'
 
 export function getEthPriceInUSD(): BigDecimal {
-  let usdcPair = Pair.load(WETH_USDC_PAIR) // USDC is token0 on Mode
+  let usdcPair = Pair.load(WETH_USDC_PAIR) // USDC is token1 on Mode
 
   if (usdcPair !== null) {
-    return usdcPair.token0Price
+    return usdcPair.token1Price
   } else {
     return ZERO_BD
   }
