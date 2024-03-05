@@ -7,10 +7,10 @@ const WETH_ADDRESS = '0x4200000000000000000000000000000000000006'
 const WETH_USDC_PAIR = '0x04627b24edE101B0a92211A92f996EDa3Fa6CC75'
 
 export function getEthPriceInUSD(): BigDecimal {
-  let usdcPair = Pair.load(WETH_USDC_PAIR) // axlusdc is token1
+  let usdcPair = Pair.load(WETH_USDC_PAIR) // USDC is token0 on Mode
 
   if (usdcPair !== null) {
-    return usdcPair.token1Price
+    return usdcPair.token0Price
   } else {
     return ZERO_BD
   }
@@ -24,7 +24,7 @@ let WHITELIST: string[] = [
   '0xd988097fb8612cc24eeC14542bC03424c656005f', // USDC
   '0xE7798f023fC62146e8Aa1b36Da45fb70855a77Ea', // DAI
   '0xf0F161fDA2712DB8b566946122a5af183995e2eD', // USDT
-  '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb', // LINK
+  '0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb' // LINK
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
