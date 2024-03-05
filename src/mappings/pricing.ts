@@ -4,7 +4,7 @@ import { BigDecimal, Address, BigInt } from '@graphprotocol/graph-ts/index'
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD, UNTRACKED_PAIRS } from './helpers'
 
 const WETH_ADDRESS = '0x4200000000000000000000000000000000000006'
-const WETH_USDC_PAIR = '0x04627b24edE101B0a92211A92f996EDa3Fa6CC75'
+const WETH_USDC_PAIR = '0x50273860341bb80de359cD391BEf9b2EB228753C'
 
 export function getEthPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(WETH_USDC_PAIR) // USDC is token0 on Mode
