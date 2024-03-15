@@ -1,16 +1,16 @@
 specVersion: 0.0.5
 description: BaseSwap is a decentralized protocol for automated token exchange on Base.
-repository: https://github.com/baseswapf[/v2-subgraph
+repository: https://github.com/baseswapfi/v2-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: mode-mainnet
+    network: mode-testnet
     source:
-      address: '0xfb926356baf861c93c3557d7327dbe8734a71891'
+      address: '0xa26655bab784c9bd9daadaaff2a05a93484bf9c7'
       abi: Factory
-      startBlock: 3326753
+      startBlock: 9426888
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -34,7 +34,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pair
-    network: mode-mainnet
+    network: mode-testnet
     source:
       abi: Pair
     mapping:
