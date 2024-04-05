@@ -31,9 +31,12 @@ let WHITELIST: string[] = [
   '0x65a2508c429a6078a7bc2f7df81ab575bd9d9275', // DAI+
   '0x4788de271f50ea6f5d5d2a5072b8d3c61d650326', // BASIN
   '0x0a074378461fb7ed3300ea638c6cc38246db4434', // EDE
-  '0xab8a1c03b8e4e1d21c8ddd6edf9e07f26e843492', // OGRE
-  '0x6b4712ae9797c199edd44f897ca09bc57628a1cf', // UNIDX
-  '0x8901cb2e82cc95c01e42206f8d1f417fe53e7af0' // YFX
+  '0x236aa50979D5f3De3Bd1Eeb40E81137F22ab794b', // tBTC
+  '0xFF0C532FDB8Cd566Ae169C1CB157ff2Bdc83E105', // FREN
+  '0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed', // DEGEN
+  '0x4e496c0256FB9D4CC7Ba2fdF931bC9CbB7731660', // BOGE
+  '0x532f27101965dd16442E59d40670FaF5eBB142E4', // BRETT
+  '0x6921B130D297cc43754afba22e5EAc0FBf8Db75b' // doginme
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
