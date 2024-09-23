@@ -8,9 +8,9 @@ dataSources:
     name: Factory
     network: optimism
     source:
-      address: '0xa26655bab784c9bd9daadaaff2a05a93484bf9c7'
+      address: '0x22505cb4d5d10b2c848a9d75c57ea72a66066d8c'
       abi: Factory
-      startBlock: 125545877
+      startBlock: 125750368
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
