@@ -3,8 +3,8 @@ import { Pair, Token, Bundle } from '../types/schema'
 import { BigDecimal, Address, BigInt } from '@graphprotocol/graph-ts/index'
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD, UNTRACKED_PAIRS } from './helpers'
 
-const WETH_ADDRESS = '0x4200000000000000000000000000000000000006'
-const WETH_USDC_PAIR = ''
+const WETH_ADDRESS = '0x82af49447d8a07e3bd95bd0d56f35241523fbab1'
+const WETH_USDC_PAIR = '0x4c42fa9ecc3a17229edf0fd6a8eec3f11d7e00d3'
 
 export function getEthPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(WETH_USDC_PAIR)
@@ -16,11 +16,41 @@ export function getEthPriceInUSD(): BigDecimal {
   }
 }
 
+let stableCoins = [
+  '0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F', // FRAX
+  '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9', // USDT
+  '0xaf88d065e77c8cc2239327c5edb3a432268e5831', // USDC
+  '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8', // USDC.e
+  '0xe80772Eaf6e2E18B651F160Bc9158b2A5caFCA65', // USD+
+  '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1' // DAI
+]
+
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
   WETH_ADDRESS,
-  '0xe9a198d38483ad727abc8b0b1e16b2d338cf0391', // USDC.e
-  '0x5717d6a621aa104b0b4cad32bfe6ad3b659f269e' // wstETH
+  ...stableCoins,
+  '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9', // USDT
+  '0xaf88d065e77c8cc2239327c5edb3a432268e5831', // USDC
+  '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8', // USDC.e
+  '0x912ce59144191c1204e64559fe8253a0e49e6548', // ARB
+  '0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f', // WBTC
+  '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1', // DAI
+  '0x0d702ebdef2c47eb33951098db4f06bd8cca8105', // CGLD
+  '0xd5954c3084a1ccd70b4da011e67760b8e78aee84', // ARX
+  '0xeb8e93a0c7504bffd8a8ffa56cd754c63aaebfe8', // DAI+
+  '0x17fc002b466eec40dae837fc4be5c67993ddbd6f', // FRAX
+  '0x178412e79c25968a32e89b11f63b33f733770c2a', // frxETH
+  '0x9d2f299715d94d8a7e6f5eaa8e654e8c74a988a7', // FXS
+  '0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a', // GMX
+  '0x18c11fd286c5ec11c3b683caa813b77f5163a122', // GNS
+  '0xad435674417520aeeed6b504bbe654d4f556182f', // JEUR
+  '0x6aa395f06986ea4efe0a4630c7865c1eb08d5e7e', // JRT
+  '0xb7cd6c8c4600aed9985d2c0eb174e0bee56e8854', // ONYX
+  '0x3082cc23568ea640225c2467653db90e9250aaa0', // RDNT
+  '0x95ab45875cffdba1e5f451b950bc2e42c0053f39', // sfrxETH
+  '0xd4c556bb8d9ecef063c5d75c65d6e31e46990367', // UND
+  '0xcf3f5918880bbdbef7d9af8f5c845410bde25316', // UP+
+  '0xe80772eaf6e2e18b651f160bc9158b2a5cafca65' // USD+
 ]
 
 // minimum liquidity required to count towards tracked volume for pairs with small # of Lps
