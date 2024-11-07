@@ -16,15 +16,6 @@ export function getEthPriceInUSD(): BigDecimal {
   }
 }
 
-let stableCoins = [
-  '0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F', // FRAX
-  '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9', // USDT
-  '0xaf88d065e77c8cc2239327c5edb3a432268e5831', // USDC
-  '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8', // USDC.e
-  '0xe80772Eaf6e2E18B651F160Bc9158b2A5caFCA65', // USD+
-  '0xda10009cbd5d07dd0cecc66161fc93d7c9000da1' // DAI
-]
-
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
   WETH_ADDRESS,
