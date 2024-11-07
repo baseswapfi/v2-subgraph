@@ -28,7 +28,6 @@ let stableCoins = [
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
   WETH_ADDRESS,
-  ...stableCoins,
   '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9', // USDT
   '0xaf88d065e77c8cc2239327c5edb3a432268e5831', // USDC
   '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8', // USDC.e
