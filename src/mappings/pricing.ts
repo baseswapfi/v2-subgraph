@@ -10,7 +10,7 @@ export function getEthPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(WETH_USDC_PAIR)
 
   if (usdcPair !== null) {
-    return usdcPair.token1Price // USDC is token0
+    return usdcPair.token1Price // USDC is token1
   } else {
     return ZERO_BD
   }
